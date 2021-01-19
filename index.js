@@ -1,3 +1,5 @@
+const { Cipher } = require('./Cipher')
+
 const sha1 = require('sha1')
 const fs = require('fs')
 const path = require('path')
@@ -30,3 +32,9 @@ const read = util.promisify(fs.readFile)
 	}
 
 })()
+
+
+const masking = new Cipher('keyword', 'F')
+
+console.log(masking.makeCipher())
+console.log(masking.makeDecipher())
